@@ -9,7 +9,7 @@ build:
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
-     - apt update && apt -y install sudo lsb-release software-properties-common
+     - apt update && apt -y install sudo lsb-release software-properties-common wget
      - sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
   script:
     - chmod +x ./build.sh
