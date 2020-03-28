@@ -2,15 +2,15 @@
 # use the official gcc image, based on debian
 # can use verions as well, like gcc:5.2
 # see https://hub.docker.com/_/gcc/
-image: gcc:latest
+image: clangbuiltlinux/ubuntu
 
 build:
   stage: build
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
-  before_script:
-     - apt update && apt -y install sudo lsb-release software-properties-common
-     - sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+  #before_script:
+  #   - apt update && apt -y install sudo lsb-release software-properties-common
+  #   - sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
   script:
     - sudo chmod +x ./build.sh
     - ./build.sh
