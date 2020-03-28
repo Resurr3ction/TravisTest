@@ -1,0 +1,12 @@
+language: cpp
+
+services:
+  - docker
+
+before_install:
+  - docker pull clangbuiltlinux/debian
+  - docker ps -a
+  - docker run clangbuiltlinux/debian /bin/sh -c "apt update && apt -y install sudo lsb-release software-properties-common wget && sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)""
+  
+script:
+  - chmod +x ./build.sh && ./build.sh
