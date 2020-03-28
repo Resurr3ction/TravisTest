@@ -1,3 +1,4 @@
+#!/bin/sh -x
 "clang++-10" "./projects/ACore/Variant.cpp" -I"./projects/ACore/include/ACore" -c -o Variant.cpp.o
 "llvm-ar-10" rc ACore.lib Variant.cpp.o
 "clang++-10" "./projects/ACore/test/main.cpp" -I"./projects/Catch2/include -c -o main.cpp.o"
