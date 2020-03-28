@@ -9,7 +9,8 @@ build:
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
   before_script:
-     - bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+     - apt update && apt -y install sudo lsb-release
+     - sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
   script:
     - ./build.sh
   artifacts:
