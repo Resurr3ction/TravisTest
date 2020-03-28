@@ -12,6 +12,7 @@ build:
      - apt update && apt -y install sudo lsb-release software-properties-common
      - sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
   script:
+    - sudo chmod +x ./build.sh
     - ./build.sh
   artifacts:
     paths:
