@@ -8,11 +8,11 @@ build:
   stage: build
   # instead of calling g++ directly you can also use some build toolkit like make
   # install the necessary build tools when needed
-  before_script:
-     - apt update && apt -y install sudo
+  #before_script:
+  #   - apt update && apt -y install sudo
   #   - sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
   script:
-    - sudo chmod +x ./build.sh
+    - chmod +x ./build.sh
     - ./build.sh
   artifacts:
     paths:
