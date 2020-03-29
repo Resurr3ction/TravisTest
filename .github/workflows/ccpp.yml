@@ -16,7 +16,7 @@ jobs:
     - name: Update packages
       run: sudo apt update
     - name: Install prerequisites
-      run: sudo apt -y lsb-release software-properties-common wget
+      run: sudo apt install -y lsb-release software-properties-common wget
     - name: Install LLVM
       run: sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
     - name: Enable build script
