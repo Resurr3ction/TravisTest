@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update packages
+      run: sudo apt update
+    - name: Install prerequisites
+      run: sudo apt -y lsb-release software-properties-common wget
+    - name: Install LLVM
+      run: sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+    - name: Enable build script
+      run: sudo chmod +x ./build.sh
+    - name: Build
+      run: ./build.sh
